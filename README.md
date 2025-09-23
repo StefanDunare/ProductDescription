@@ -1,14 +1,14 @@
 # Product Description Generator
 
-This project is an automated system designed to find and generate product descriptions and specifications using web scraping and a Generative AI model (Google Gemini). It reads products from a database that are missing a description, searches for them online, scrapes the relevant product pages, and uses an AI to intelligently extract and structure the information.
+This project is an automated system designed to find and generate product descriptions and specifications using web scraping and a Generative AI model (Google Gemini). It reads products from a database that are missing a description, searches for them online, scrapes the relevant product pages, and uses AI to intelligently extract and structure the information.
 
 ## How It Works
 
 The workflow is as follows:
 1.  **Database Input**: The script identifies products in the `Desc_Product` table that have a `Status Description` of `0`, marking them as needing a description.
-2.  **Web Search**: For each product, the system automatically searches online to find the most relevant product page URL.
-3.  **Intelligent Scraping**: Using Playwright, the script navigates to the found URL, handles popups and anti-bot measures, and extracts the clean, relevant text content from the page.
-4.  **AI Data Extraction**: The cleaned content is sent to the Gemini Large Language Model, which analyzes the text and extracts structured data (product name, description, specifications) based on a sophisticated system prompt.
+2.  **Web Search**: For each product, the system automatically searches online to find the most relevant product page URLs.
+3.  **Intelligent Scraping**: Using Playwright, the script navigates to a page, handles popups and anti-bot measures, and extracts the clean, relevant text content.
+4.  **AI Data Extraction**: The cleaned content is sent to Gemini LLM, which analyzes the text and extracts structured data (product name, description, specifications) based on a system prompt with instructions and rules.
 5.  **Database Update**: The structured data is then used to update the product's entry in the database.
 
 
